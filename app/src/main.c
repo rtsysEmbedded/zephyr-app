@@ -18,6 +18,8 @@ LOG_MODULE_REGISTER(main, CONFIG_APP_LOG_LEVEL);
 
 int main(void)
 {
+
+	#ifdef CONFIG_FETURE
 	int ret;
 	unsigned int period_ms = BLINK_PERIOD_MS_MAX;
 	const struct device *sensor, *blink;
@@ -74,6 +76,7 @@ int main(void)
 
 		k_sleep(K_MSEC(100));
 	}
+	#endif
 
 	return 0;
 }

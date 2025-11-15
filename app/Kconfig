@@ -13,3 +13,12 @@ endmenu
 module = APP
 module-str = APP
 source "subsys/logging/Kconfig.template.log_config"
+
+config FETURE
+	bool "Activate example for stm32f302"
+	default n
+	depends on DT_HAS_BLINK_GPIO_LED_ENABLED
+	select GPIO
+	help
+	  Enable this option to use the GPIO-controlled LED blink driver. This
+	  demonstrates how to implement a driver for a custom driver class.

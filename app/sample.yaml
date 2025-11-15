@@ -9,8 +9,10 @@ common:
   integration_platforms:
     - custom_plank
     - nucleo_f302r8
+    - frdm_mcnx947
 tests:
   app.default: {}
   app.debug:
     extra_overlay_confs:
       - debug.conf
+  depends_on: gpio
